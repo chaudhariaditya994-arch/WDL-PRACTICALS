@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Booking Page</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+
+        form {
+            background: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+        }
+
+    </style>
+
+    <script>
+
+        function showPackage(packageName) {
+
+            document.getElementById("result").innerHTML =
+            "Selected Package: " + packageName;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2>Travel Booking Webpage</h2>
+
+<!-- Main Table -->
+
+<table border="1">
+
+    <tr>
+        <th>Package Type</th>
+        <th>Package Details</th>
+    </tr>
+
+    <tr>
+
+        <td>Tour Packages</td>
+
+        <td>
+
+            <!-- Nested Table -->
+
+            <table border="1">
+
+                <tr>
+                    <th>Place</th>
+                    <th>Price</th>
+                </tr>
+
+                <tr>
+                    <td>Goa</td>
+                    <td>Rs. 10000</td>
+                </tr>
+
+                <tr>
+                    <td>Manali</td>
+                    <td>Rs. 15000</td>
+                </tr>
+
+            </table>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br><br>
+
+<form>
+
+    Customer Name:
+    <input type="text" name="name">
+
+    <br><br>
+
+    Mobile Number:
+    <input type="text" name="mobile">
+
+</form>
+
+<br>
+
+<button onclick="showPackage('Goa Tour')">
+    Select Goa Package
+</button>
+
+<button onclick="showPackage('Manali Tour')">
+    Select Manali Package
+</button>
+
+<p id="result"></p>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz Registration</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+    </style>
+
+    <script>
+
+        function showDetails() {
+
+            var name =
+            document.getElementById("name").value;
+
+            var email =
+            document.getElementById("email").value;
+
+            document.getElementById("result").innerHTML =
+            "Participant Name: " + name +
+            "<br>Email: " + email;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2>Online Quiz Registration Page</h2>
+
+<form>
+
+    Name:
+    <input type="text" id="name">
+
+    Email:
+    <input type="email" id="email">
+
+    College Name:
+    <input type="text" id="college">
+
+    <button type="button"
+            onclick="showDetails()">
+        Register
+    </button>
+
+</form>
+
+<br>
+
+<p id="result"></p>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+    </style>
+
+    <script>
+
+        function validateForm() {
+
+            var feedback =
+            document.forms["myForm"]["feedback"].value;
+
+            if (feedback == "") {
+                alert("Please enter feedback");
+                return false;
+            }
+
+            alert("Feedback submitted successfully!");
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2 align="center">Feedback Form</h2>
+
+<form name="myForm"
+      onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" name="name">
+
+    <br><br>
+
+    Feedback:
+    <br>
+
+    <textarea name="feedback"></textarea>
+
+    <br><br>
+
+    Rating:
+    <br>
+
+    <input type="radio" name="rating" value="Good"> Good
+
+    <input type="radio" name="rating" value="Average"> Average
+
+    <input type="radio" name="rating" value="Poor"> Poor
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

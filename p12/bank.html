@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Customer Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+    </style>
+
+    <script>
+
+        function validateForm() {
+
+            var name =
+            document.forms["myForm"]["name"].value;
+
+            if (name == "") {
+                alert("Enter Customer Name");
+                return false;
+            }
+
+            return true;
+        }
+
+        function calculateInterest() {
+
+            var p =
+            document.getElementById("amount").value;
+
+            var r =
+            document.getElementById("rate").value;
+
+            var t =
+            document.getElementById("time").value;
+
+            var interest = (p * r * t) / 100;
+
+            document.getElementById("result").innerHTML =
+            "Interest = Rs. " + interest;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2 align="center">Bank Customer Information Form</h2>
+
+<form name="myForm"
+      method="post"
+      onsubmit="return validateForm()">
+
+    Customer Name:
+    <input type="text" name="name">
+
+    Account Number:
+    <input type="text" name="account">
+
+    Amount:
+    <input type="number" id="amount" name="amount">
+
+    Rate of Interest:
+    <input type="number" id="rate">
+
+    Time:
+    <input type="number" id="time">
+
+    <button type="button"
+            onclick="calculateInterest()">
+        Calculate Interest
+    </button>
+
+    <p id="result"></p>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    echo "<h3>Customer Details</h3>";
+
+    echo "Name: " . $_POST["name"] . "<br>";
+
+    echo "Account Number: " .
+         $_POST["account"] . "<br>";
+
+    echo "Amount: " .
+         $_POST["amount"] . "<br>";
+}
+
+?>
+
+</body>
+</html>

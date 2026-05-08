@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Information</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        .dept {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function showDepartment() {
+            document.getElementById("department").innerHTML =
+            "Department: Computer Science";
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h1>College Information</h1>
+
+<!-- Main Table -->
+<table border="1" align="center">
+
+    <tr>
+        <th>College Name</th>
+        <td>ABC College</td>
+    </tr>
+
+    <tr>
+        <th>College Image</th>
+        <td>
+            <img src="college.jpg" width="200" height="120">
+        </td>
+    </tr>
+
+    <tr>
+        <th>Courses</th>
+
+        <td>
+
+            <!-- Nested Table -->
+            <table border="1">
+
+                <tr>
+                    <th>Course</th>
+                    <th>Duration</th>
+                </tr>
+
+                <tr>
+                    <td>BCA</td>
+                    <td>3 Years</td>
+                </tr>
+
+                <tr>
+                    <td>BSc CS</td>
+                    <td>3 Years</td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+        <th>Website</th>
+        <td>
+            <a href="https://www.google.com" target="_blank">
+                Visit Website
+            </a>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<center>
+    <button onclick="showDepartment()">
+        Show Department
+    </button>
+
+    <p id="department" class="dept"></p>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List App</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        input {
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        li {
+            margin: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>To-Do List Application</h2>
+
+<input type="text" id="task"
+       placeholder="Enter Task">
+
+<button onclick="addTask()">
+    Add
+</button>
+
+<ul id="taskList"></ul>
+
+<script>
+
+    function addTask() {
+
+        var task =
+        document.getElementById("task").value;
+
+        if (task == "") {
+
+            alert("Enter Task");
+
+            return;
+        }
+
+        var li = document.createElement("li");
+
+        li.innerHTML = task +
+
+        " <button onclick='editTask(this)'>Edit</button> " +
+
+        " <button onclick='deleteTask(this)'>Delete</button>";
+
+        document.getElementById("taskList")
+                .appendChild(li);
+
+        document.getElementById("task").value = "";
+    }
+
+    function deleteTask(button) {
+
+        button.parentElement.remove();
+    }
+
+    function editTask(button) {
+
+        var newTask =
+        prompt("Update Task");
+
+        if (newTask != "") {
+
+            button.parentElement.firstChild.textContent =
+            newTask + " ";
+        }
+    }
+
+</script>
+
+</body>
+</html>

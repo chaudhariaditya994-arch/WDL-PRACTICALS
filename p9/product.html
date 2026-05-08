@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Advertisement</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+    </style>
+
+    <script>
+
+        function showProduct(productName) {
+
+            document.getElementById("result").innerHTML =
+            "Selected Product: " + productName;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2>Product Advertisement Page</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Product</th>
+        <th>Image</th>
+        <th>Price</th>
+    </tr>
+
+    <tr>
+        <td>Mobile Phone</td>
+
+        <td>
+            <img src="mobile.jpg"
+                 width="120" height="120">
+        </td>
+
+        <td>Rs. 15000</td>
+    </tr>
+
+    <tr>
+        <td>Laptop</td>
+
+        <td>
+            <img src="laptop.jpg"
+                 width="120" height="120">
+        </td>
+
+        <td>Rs. 50000</td>
+    </tr>
+
+</table>
+
+<br>
+
+<a href="https://www.amazon.in" target="_blank">
+    Visit Shopping Website
+</a>
+
+<br><br>
+
+<button onclick="showProduct('Mobile Phone')">
+    Select Mobile
+</button>
+
+<button onclick="showProduct('Laptop')">
+    Select Laptop
+</button>
+
+<p id="result"></p>
+
+</body>
+</html>

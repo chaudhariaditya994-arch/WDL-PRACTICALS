@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourism Webpage</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: lightyellow;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+
+        function showPlace(place) {
+
+            document.getElementById("result").innerHTML =
+            "Selected Tourist Place: " + place;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h2>Tourist Places</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Place</th>
+        <th>Image</th>
+        <th>Link</th>
+    </tr>
+
+    <tr>
+        <td>Goa</td>
+
+        <td>
+            <img src="goa.jpg"
+                 width="120" height="100">
+        </td>
+
+        <td>
+            <a href="https://www.google.com"
+               target="_blank">
+               Visit
+            </a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Manali</td>
+
+        <td>
+            <img src="manali.jpg"
+                 width="120" height="100">
+        </td>
+
+        <td>
+            <a href="https://www.google.com"
+               target="_blank">
+               Visit
+            </a>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<button onclick="showPlace('Goa')">
+    Show Goa
+</button>
+
+<button onclick="showPlace('Manali')">
+    Show Manali
+</button>
+
+<p id="result"></p>
+
+</body>
+</html>
