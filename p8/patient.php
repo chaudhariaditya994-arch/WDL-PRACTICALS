@@ -1,102 +1,76 @@
+<!-- appointment.php -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Library Webpage</title>
-
+    <title>Patient Appointment Form</title>
     <style>
-
         body {
             font-family: Arial;
-            background-color: lightyellow;
-            text-align: center;
+            background: #f2f2f2;
         }
-
-        table {
-            margin: auto;
-            border-collapse: collapse;
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
         }
-
-        td, th {
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
             padding: 10px;
+            border: none;
+            width: 100%;
         }
-
     </style>
 
     <script>
+        function validateForm() {
+            let name = document.forms["appForm"]["name"].value;
+            let age = document.forms["appForm"]["age"].value;
 
-        function calculateFine() {
-
-            var days =
-            parseInt(document.getElementById("days").value);
-
-            var fine = 0;
-
-            switch(true) {
-
-                case (days <= 5):
-                    fine = days * 1;
-                    break;
-
-                case (days <= 10):
-                    fine = days * 2;
-                    break;
-
-                default:
-                    fine = days * 5;
+            if (name == "" || age == "") {
+                alert("All fields are required!");
+                return false;
             }
 
-            document.getElementById("result").innerHTML =
-            "Book Fine = Rs. " + fine;
+            if (age <= 0) {
+                alert("Enter valid age");
+                return false;
+            }
+
+            return true;
         }
-
     </script>
-
 </head>
-
 <body>
 
-<h2>Library Books Information</h2>
+<div class="container">
+    <h2>Patient Appointment Form</h2>
 
-<table border="1">
+    <form name="appForm" method="post" onsubmit="return validateForm()">
+        <input type="text" name="name" placeholder="Patient Name">
+        <input type="number" name="age" placeholder="Age">
+        <input type="date" name="date">
+        <textarea name="problem" placeholder="Health Problem"></textarea>
+        <button type="submit">Submit</button>
+    </form>
 
-    <tr>
-        <th>Book</th>
-        <th>Image</th>
-    </tr>
-
-    <tr>
-        <td>PHP Programming</td>
-
-        <td>
-            <img src="book1.jpg"
-                 width="100" height="120">
-        </td>
-    </tr>
-
-    <tr>
-        <td>Java Programming</td>
-
-        <td>
-            <img src="book2.jpg"
-                 width="100" height="120">
-        </td>
-    </tr>
-
-</table>
-
-<br><br>
-
-<h3>Book Fine Calculator</h3>
-
-Enter Late Days:
-
-<input type="number" id="days">
-
-<button onclick="calculateFine()">
-    Calculate
-</button>
-
-<p id="result"></p>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "<h3>Appointment Details</h3>";
+        echo "Name: " . $_POST['name'] . "<br>";
+        echo "Age: " . $_POST['age'] . "<br>";
+        echo "Date: " . $_POST['date'] . "<br>";
+        echo "Problem: " . $_POST['problem'];
+    }
+    ?>
+</div>
 
 </body>
 </html>
